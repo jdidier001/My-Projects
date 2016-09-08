@@ -41,7 +41,7 @@ int  pennyCount = 0;
 
 //for counting coins value
 int coinValue = 0;
-double costToUse = 10.9;
+double costToUse = .109;
 double payOutValue = 0;
 double processFeeTotal = 0;
 
@@ -58,12 +58,14 @@ int coinValueToDimes = 0;
 int coinValueToNickle = 0;
 int coinValueToPennies = 0;
 
+
+
 //Get input and convert into the function
 cout << "Please enter the total value of the coins without a decimal place. " << endl;
 cin  >> userCoinInput;
 
 coinValue = userCoinInput;
-cout << "You entered " << userCoinInput << ".";
+cout << "You entered " << userCoinInput << "." << endl;
 coinValue = userCoinInput;
 
 //Quarters
@@ -85,14 +87,17 @@ pennyCount = (coinValueToPennies/pennyValue);
 
 // fee processing
 processFeeTotal= (userCoinInput*costToUse);
+cout << processFeeTotal << endl;
 payOutValue = (userCoinInput - processFeeTotal);
 
 // Outputting the values in statements
 cout << "You gave me " << quarterCount << " Quarters, and ";
-cout << dimeCount << " Dimes, and ";
-cout << nickleCount << " Nickles, and " ;
-cout << pennyCount << " Pennies. The original dollar amount was $ " << userCoinInput << endl;
-cout << "After a usage fee of " << costToUse << "% you now recieve $" << payOutValue << endl;
-cout << ". Now I’m a baller!!!";
+cout << dimeCount << " Dimes, " << endl;
+cout << "and " << nickleCount << " Nickles, and " ;
+cout << pennyCount << " Pennies. " << endl;
+cout << "The original dollar amount was $ " << userCoinInput << endl;
+cout << "After a usage fee of " << costToUse << "%" << endl;
+cout << "you now recieve $" << payOutValue << ". " << endl;
+cout << "Now I’m a baller!!!";
 
 };
