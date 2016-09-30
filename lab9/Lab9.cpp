@@ -54,71 +54,41 @@ int art() {
 
 class TemperatureConverter{
 
-   public:                                // The class' public functions
-      void   SetTempFromKelvin(double setKelvin);       // accepts a kelvin value and stores it
-      double GetTempFromKelvin() const;            // return the Kelvin value
-    
+   public:                                              // The class' public functions
+        void   SetTempFromKelvin(double kelvin_);       // accepts a kelvin value and stores it
+        double GetTempFromKelvin() const;               // return the Kelvin value
+        double SetTempFromCelsius();                    // Accept Celsius value & converts to Kelvin
+        double SetTempFromFarenheit();                  // Accepts Farenheit value & converts to Kelvin
+        double GetTempFromKCelsius();                   //  returns Celsius
+        double GetTempFromKFarenheit();                 //  returns Kelvin
+        double PrintTemp();                             //  Prints out data
+        
+//Default Constructor
+        void    SetTempFromKelvin(double kelvin_)
+                {
+                    kelvin_ = =0;
+                }
+//Overload Constructor
+        void    GetTempFromKelvin(double kelvin_)
+                {
+                    tempKelvin=kelvin_; // set tempKelvin to the kelvin_ value
+                }
+
     private:  // Private data members
-    double  tempKelvin;
-    double  tempCelsius;
-    double  tempFahrenheit;
+        double  tempKelvin;
+        double  tempCelsius;
+        double  tempFahrenheit;
     
- 
-};
-
-
-// St temp for Kelvin
-
-void SetTempFromCelsiui::SetKelvin(double setKelvin){
-    tempKelvin = setKelvin; // tempKelvin refers to a data member
-    return;
+    
 }
+
+// Accept Celsius value
+double          SetTempFromCelsius::kelvin_(double kelvin_)
+                {
+                   tempCelsius= tempKelvin -273.15; // tempKelvin refers to a data member
+        return;
+                }
 
 void SetTempFromFarenheit::
 
 
-/*
-
-
-class RunnerInfo {
-   public:                                // The class' public functions
-      void   SetTime(int timeRunSecs);       // Time run in seconds
-      void   SetDist(double distRunMiles);   // Distance run in miles
-      double GetSpeedMph() const;            // Speed in miles/hour
-   private:  // The class' private internal data members
-      int    timeRun;
-      double distRun;
-};
-
-)
-// "RunnerInfo::" means SetTime is a RunnerInfo member function
-void RunnerInfo::SetTime(int timeRunSecs) {
-   timeRun = timeRunSecs;  // timeRun refers to data member
-   return;
-}
-
-void RunnerInfo::SetDist(double distRunMiles) {
-   distRun = distRunMiles;
-   return;
-}
-
-double RunnerInfo::GetSpeedMph() const {
-   return distRun / (timeRun / 3600.0); // miles / (secs / (hrs / 3600 secs))
-}
-
-int main() {
-   RunnerInfo runner1; // User-created object of class type RunnerInfo
-   RunnerInfo runner2; // A second object
-
-   runner1.SetTime(360);
-   runner1.SetDist(1.2);
-
-   runner2.SetTime(200);
-   runner2.SetDist(0.5);
-
-   cout << "Runner1's speed in MPH: " << runner1.GetSpeedMph() << endl;
-   cout << "Runner2's speed in MPH: " << runner2.GetSpeedMph() << endl;
-   
-   */
-   
-   
