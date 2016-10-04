@@ -53,42 +53,89 @@ int art() {
 };
 
 class TemperatureConverter{
+        double kelvin_;
 
-   public:                                              // The class' public functions
-        void   SetTempFromKelvin(double kelvin_);       // accepts a kelvin value and stores it
-        double GetTempFromKelvin() const;               // return the Kelvin value
-        double SetTempFromCelsius();                    // Accept Celsius value & converts to Kelvin
-        double SetTempFromFarenheit();                  // Accepts Farenheit value & converts to Kelvin
-        double GetTempFromKCelsius();                   //  returns Celsius
-        double GetTempFromKFarenheit();                 //  returns Kelvin
-        double PrintTemp();                             //  Prints out data
+   public:      // The class' public functions                                                              //  Prints out data
         
-//Default Constructor
-        void    SetTempFromKelvin(double kelvin_)
+                //Overload Consrctor
+            TemperatureConverter(double tc_){
+                kelvin_= tc_;
+            };
+          
+                //Default Constructor
+            TemperatureConverter(){
+                kelvin_=0;
+            };
+                
+        void    SetTempFromKelvin(double stK)
                 {
-                    kelvin_ = =0;
-                }
-//Overload Constructor
-        void    GetTempFromKelvin(double kelvin_)
-                {
-                    tempKelvin=kelvin_; // set tempKelvin to the kelvin_ value
+                    kelvin_ = stK;                                                                // set tempKelvin to the kelvin_ value stores it
                 }
 
-    private:  // Private data members
-        double  tempKelvin;
-        double  tempCelsius;
-        double  tempFahrenheit;
+        double    GetTempFromKelvin()
+                {
+                    return kelvin_;                                                             // returns kelvin value
+                }
+
+                // Accept Celsius value & converts to Kelvin
+        void    SetTempFromCelcius(double stC)    
+                {
+                     kelvin_= stC+273.15;                                                     //gets value converts to kelvin
+                }
+        
+                // Accepts Farenheit value & converts to Kelvin
+        void    SetTempFromFahrenheit(double stF)   
+                {
+                     kelvin_= (5 * (stF -32)/9) + 273.15;                                                   //gets value converts to kelvin
+                }
+                
+                // Accepts Kelvin value & converts to Celsius
+        double    GetTempAsCelcius() 
+                {
+                     return (kelvin_ - 273.15);                                                      //  returns Celsius
+                }
+                
+                // Accepts Kelvin value & converts to Fahrenheit
+        double    GetTempAsFahrenheit()
+                {
+                       return  (((kelvin_ -273.15 )* 9)/5 + 32);                                          // returns Farhenheit
+                }
+                
+        double    PrintTemps()
+                {
+                    cout << "The temperature is " << kelvin_ << endl ;                                   // prionts the asked for temperature
+                    
+                }
+ 
+ private:                                                                                       // Private data members
+ 
+};
+
+
+int main ()
+{
+    TemperatureConverter temp1; //testing default constructor
+    TemperatureConverter temp2(274); //testing overloaded constructor
+    
+    temp1.PrintTemps();
+    temp2.PrintTemps();
     
     
+    
+    temp1.SetTempFromKelvin(400.15); //testing mutator function
+    cout<<temp1.GetTempFromKelvin()<<endl;//testing accessor function
+    temp1.PrintTemps();
+    
+    temp2.SetTempFromCelcius(32); //testing other functions
+    cout<<temp2.GetTempAsCelcius()<<endl;
+    temp2.PrintTemps();
+    
+    temp2.SetTempFromFahrenheit(32);
+    cout<<temp2.GetTempAsFahrenheit()<<endl;
+    temp2.PrintTemps();
+    
+  /*
+    art();
+      */
+    return 0;
 }
-
-// Accept Celsius value
-double          SetTempFromCelsius::kelvin_(double kelvin_)
-                {
-                   tempCelsius= tempKelvin -273.15; // tempKelvin refers to a data member
-        return;
-                }
-
-void SetTempFromFarenheit::
-
-
