@@ -22,6 +22,13 @@ Version # 1.0 - 10-8-16
 
 _________________________________________________
 **Notes**
+*************************************
+Submissions=
+    
+    git add lab1
+    git commit –a –m ‘description of your choice’
+    git push
+
 
 */
 
@@ -52,10 +59,9 @@ int art() {
 
 };
 
-
-int main()
-{
-    cout << "What kind of car are you? Figure out game." << end;
+int figCar()
+    {
+        cout << "What kind of car are you? Figure out game." << end;
     cout <<  "Please type your answer in as Y or N." << endl << "Do you haul a lot of things?" << endl;
     cin >> string haulValue = " ";
     
@@ -85,15 +91,19 @@ int main()
                     cout << "You did not enter a valid option  for doors, start again." << endl;
         else 
                     cout << "You did not enter a valid option for hauling, start again." << endl;
-    
-    
-}
+    };
+        
 
-
-
-
-Create a getting to know you flowchart similar to the “What animal are you?” one we did in class.
-Requirements
-
- Use a nested if and a switch case to recreate the flow chart.
+int main()
+{
+   switch case to recreate the flow chart.
 Input
+    figCar();
+    
+    
+    
+};
+
+
+
+

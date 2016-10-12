@@ -22,6 +22,12 @@ Version # 1.0 - 10-6-16
 
 _________________________________________________
 **Notes**
+*************************************
+Submissions=
+    
+    git add lab#
+    git commit –a –m ‘description of your choice’
+    git push
 
 */
 
@@ -56,7 +62,7 @@ int art() {
 class TaxCalculator
 {
         double money_;
-        
+        string filingStatus = " ";
         
         public:      // The class' public functions                                                              
         
@@ -77,75 +83,83 @@ class TaxCalculator
                             money_ = ta_;                                                                
                         }    
             
-            double    GetTaxAmount( )
+            double  GetTaxAmount( )
                         {
                             return money_;                                                           
+                        }  
+            
+            void    SetMaritalStatus(string SorM="  ")
+                        {
+                           string filingStatus = SorM;                                                                
                         }    
             
-            void     SetuserInput( )
+            string  GetMaritalStatus( )
                         {
-                           cout << "testing Set User input "
+                            return filingStatus;                                                           
+                        }
+            
+            void     SetUserInput( )
+                        {
+                           cout << "testing Set User input ";
                         } 
             
-            double    GettuserInput(double TaxTransfer)
+            double    GetUserInput(string firstName, string lastName, string filingStatus, double grossWage, double amountWithheld)             
+
                         {
                            // money_ = wage + interest + unemployment;
-                           if (mStatus == maried) 
+                           if (filingStatus = ("M"||"m"));
                                     
-                                    money_ = (money_ - (2(3900+6100)));
+                                    money_ = money_ - (2 * (3900 + 6100));
                                     
                                     /*
                                    
                                     $72,501 and above  $9,982.50 plus 28% of the excess over $72,500
 
 */
-
-                                    
-                                            if money_<0;
+                                            if (money_<0);
                                                     
-                                                    taxOwed = 0;
+                                                    double taxOwed = 0;
                                             
-                                            else if ( money_ <= 17850)
+                                            else if ( money_ <= 17850);
                                             
                                                     taxOwed = money_* .10;
                                             
-                                            else if ( money_ <= 72500)
+                                            else if ( money_ <= 72500);
                                             
                                                     taxOwed = (((money_ - 17850) * .15) + 1785) ;        
                                             
                                             else 
-                                                    taxOwed = (((money_ - 72500) * .28) + 9982.50;        
+                                                    taxOwed = (((money_ - 72500) * .28) + 9982.50);        
                                     
-                            else
+                            else if filingStatus == ("S"||"s");
                                 
-                                    money_=money_;
                                     
-                        
-                                            if money_<0;
+                                            if (money_<0);
                                                     
                                                     taxOwed = 0;
                                             
-                                            else if ( money_ < 8925)
+                                            else if ( money_ < 8925);
                                             
                                                     taxOwed = money_* .10;
                                             
-                                            else if ( money_ < 36,250)
+                                            else if ( money_ < 36,250);
                                             
                                                     taxOwed = (((money_ - 8925) * .15) + 892.50) ;        
                                             
-                                            else if ( money_ < 87850)
+                                            else if ( money_ < 87850);
                                             
                                                     taxOwed = (((money_ - 36250) * .25) + 4991.25) ;
                                             
                                             else 
                                             
                                                     taxOwed = (((money_ - 87850) * .28) + 17891.25) ;        
-                                                    
-        
+                                                
+                             else 
+                                    
+                                    cout << "Please enter a valid Letter!" << endl;
+                               
                             return money_;                                                           
-        
-                        }  
-                        
+                                }  
                         
                 double   PrintAmount()
                         {
@@ -155,13 +169,23 @@ class TaxCalculator
 };
                         
 /*
-You are creating a program that will calculate the income tax, and amount owed or to be refunded for a person (or couple).  The program will take the following basic tax information: name, filing status (single or married), gross wages, salaries and tips, and the amount of tax withheld.  It will then calculate the taxes as follows:
+You are creating a program that will calculate the 
+income tax
+amount owed
+refunded for a person (or couple).  
+
+name, 
+filing status (single or married), 
+gross wages, 
+salaries and tips 
+amount of tax withheld.  
+
+It will then calculate the taxes as follows:
 
     Add the three income sources (wages, interest and unemployment) together to get the adjusted gross income.
     Subtract the personal exemption of $3,900 and the standard deduction of $6,100. For a joint (married) return, these amounts are subtracted for each person.
     If the resulting number is less than zero, then the owed tax is zero. If the number is above zero, use the tax tables to calculate the tax.
 */
-
 
 int main ()
 {
@@ -170,7 +194,7 @@ int main ()
     
     cout << endl;  
     
-    taxAmt_1.SetTaxAmount(100);  //testing mutator function
+/*    taxAmt_1.SetTaxAmount(100);  //testing mutator function
     cout <<  "1. You deposited " << taxAmt_1.GetDepositAmount() << endl;//testing accessor function
-    taxAmt_1.PrintAmount(); 
+    taxAmt_1.PrintAmount(); */
 };
