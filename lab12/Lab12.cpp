@@ -61,47 +61,72 @@ int art() {
 
 int figCar()
     {
-        cout << "What kind of car are you? Figure out game." << end;
-    cout <<  "Please type your answer in as Y or N." << endl << "Do you haul a lot of things?" << endl;
-    cin >> string haulValue = " ";
+    char haulValue;
+    char bedValue;
+    char doorValue;
+    //char Y,y,N,n;
     
-        if (haulValue ==  Y || y ) 
-            cout "Please type your answer in as Y or N." << endl << "Do you have a bed?" << endl;
-            cin >> string bedValue = " ";
-            
-                if (bedValue == Y || y)
-                    cout << "You are a Truck" << endl;
-                    
-                else if (bedValue == N || n)
-                    cout << "You are a Van" << endl;
-                    
-                else 
-                    cout << "You did not enter a valid option for a bed value,  start again." << endl;
-                    
-        else if (haulValue == N || n)
-            cout "Please type your answer in as Y or N." << endl << "Do you have a two doors?" << endl;
-            cin >> string doorValue = " ";
+    
+        cout << "What kind of car are you? Figure out game." << endl;
+        cout << "Please type your answer in as Y or N." << endl << "Do you haul a lot of things?" << endl;
+        
+        cin >> haulValue;
+    
+            if (haulValue=='Y' || haulValue=='y' ) 
+                {
+                        cout << "Please type your answer in as Y or N." << endl << "Do you have a bed?" << endl;
+                        cin >> bedValue;
+                        
+                            if (bedValue == 'Y' || bedValue ==  'y')
+                                {
+                                    cout << "You are a Truck" << endl;
+                                }
+                                
+                            else if (bedValue == 'N' || bedValue == 'n')
+                                {
+                                    cout << "You are a Van" << endl;
+                                
+                                }
+                            else 
+                                {
+                                    cout << "You did not enter a valid option for a bed value,  start again." << endl;
+                                };
+                }
                 
-                if (doorValue == Y || y)
-                    cout << "You are a a sports car" << endl;
-                    
-                else if (doorValue == N || n)
-                    cout << "You are a boring 4 door" << endl;
-                else 
-                    cout << "You did not enter a valid option  for doors, start again." << endl;
-        else 
-                    cout << "You did not enter a valid option for hauling, start again." << endl;
-    };
+            else if (haulValue == 'N' || haulValue ==  'n')
+                    {
+                        cout << "Please type your answer in as Y or N." << endl << "Do you have a two doors?" << endl;
+                        cin >> doorValue;
+                            
+                            if (doorValue == 'Y' || doorValue ==  'y')
+                                {
+                                    cout << "You are a a sports car" << endl;
+                                }
+                                
+                            else if (doorValue == 'N' || doorValue ==  'n')
+                                {
+                                    cout << "You are a boring 4 door" << endl;
+                                }
+                                
+                            else
+                                {
+                                    cout << "You did not enter a valid option  for doors, start again." << endl;
+                                };  
+                    }       
+            else 
+                    {
+                         cout << "You did not enter a valid option for hauling, start again." << endl;
+                    };     
+            };
         
 
 int main()
 {
-   switch case to recreate the flow chart.
-Input
+  // switch case to recreate the flow chart.
+//Input
     figCar();
-    
-    
-    
+    cout << "finish switch case";
+
 };
 
 
