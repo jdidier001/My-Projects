@@ -35,6 +35,7 @@ Submissions=
 #include <iostream>
 #include <cmath>
 #include <cstdlib>
+#include <chrono>
 
 using namespace std;
 
@@ -57,9 +58,7 @@ int art() {
     cout << "Copyright Jared W Didier 2016";
 
 };
-
-int main(){
-
+int counter(){
         int m = 0;
         int n = 0;
         
@@ -72,14 +71,14 @@ int main(){
                                   
                                     cout << "1:0"<< 0+m << endl;
                                 
-                                    m++;
+                                    m= m+15;
                                 };
                         
                         
                           
                             cout << "1:"<< 0+m << endl;
                         
-                            m++;
+                            m= m+15;
                         };
          
            
@@ -88,13 +87,24 @@ int main(){
                                 while(n <10)
                                     {
                                         cout << "2:0"<< 0+n << endl;
-                                        n++;
+                                        n= n+15;
                                     };
                         
                             cout << "2:"<< 0+n << endl;
-                            n++;
+                            n = n +15;
                         };
             };
+}
+
+int main(){
+ counter();
+ 
+ //
+  std::cout << "system_clock durations can represent:\n";
+  std::cout << "min: " << std::chrono::system_clock::duration::min().count() << "\n";
+  std::cout << "max: " << std::chrono::system_clock::duration::max().count() << "\n";
+  //
+        
 };
 
 /*

@@ -133,10 +133,6 @@ int main()
   // switch case to recreate the flow chart.
 //Input
     figCar();
-    //cout << "finish switch case";
+    cout << "finish switch case";
 
 };
-
-
-
-
