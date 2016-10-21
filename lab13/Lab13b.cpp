@@ -101,18 +101,16 @@ int userInfo(){
     int endHour = 0;
     int runTimes = 0;
     
-    cout << endl;
     cout << "Please enter a beginning hour military time. First digit/s only. ";
     cin >> startHour;
     cout << "Please enter an ending hour military time. First digit/s only. ";
     cin >> endHour;
     
-    cout << endl;
-    cout << "Start " << startHour << " End " << endHour << " Loop Run Times ";
+    cout << "Start " << startHour << " End " << endHour << " Run ";
     
     runTimes = endHour- startHour;
     
-    cout << runTimes << endl  << endl;
+    cout << runTimes;
     int i = 0;
    
     int stNum = startHour;
@@ -148,3 +146,28 @@ int main(){
  userInfo();
  
 };
+
+/*
+Problem Statement
+
+Create a program that will print every minute between two values.
+
+First, start by programming every minute between 1:00 pm and 2:59 pm using one or more loops.
+
+Second, accept user input for a start hour and ending hour.  Print every 15 minute interval between these two times.
+Requirements
+
+ Use the appropriate loops.
+Input
+
+Your choice.
+Output
+
+Appropriate input questions.
+
+Output in time including am/pm.
+Submission:
+
+Post your lab to GitHub.
+
+Take a screenshot of your lab running.  Submit the document to the Canvas assignment.  Put in any comments you want me to know.*/
