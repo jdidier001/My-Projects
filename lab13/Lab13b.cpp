@@ -56,89 +56,84 @@ int art() {
     
     cout << "Computerized FLies!" << endl << endl;
     cout << "Copyright Jared W Didier 2016";
-
 };
+
+
+
 int counter(){
         int m = 0;
         int n = 0;
         
-       while (n < 60)
+       for (int n; n < 3; n++)
            {
-                while(m <60)
+                for(int m; m <60; m++)
                         {
-                        while(m <10)
+                        for (m; m <10; m++)
                                 {
-                                  
-                                    cout << "1:0"<< 0+m << endl;
-                                
-                                    m= m+1;
+                                    cout << "1:0"<< 0+ m << " pm" << endl;
                                 };
-                        
-                        
-                          
-                            cout << "1:"<< 0+m << endl;
-                        
-                            m= m+1;
+                            cout << "1:"<< m << " pm" << endl;
                         };
-         
-           
-                while(n <60)
+                for(int o; o <60; o++)
                         {
-                                while(n <10)
+                        for(o; o <10; o++)
                                     {
-                                        cout << "2:0"<< 0+n << endl;
-                                        n= n+1;
+                                        cout << "2:0"<< 0+ o << " pm"<< endl;
                                     };
-                        
-                            cout << "2:"<< 0+n << endl;
-                            n = n +1;
+                            cout << "2:"<<  o << " pm" << endl;
                         };  
             };
 }
 
 int userInfo(){
+    string TimeOfDay = " ";
     int startHour = 0;
     int endHour = 0;
     int runTimes = 0;
     
+    cout << endl;
     cout << "Please enter a beginning hour military time. First digit/s only. ";
     cin >> startHour;
     cout << "Please enter an ending hour military time. First digit/s only. ";
     cin >> endHour;
     
-    cout << "Start " << startHour << " End " << endHour << " Run ";
+    cout << endl;
+    cout << "Start Hour" << startHour << " End Hour " << endHour << " Loop Runs "; 
     
     runTimes = endHour- startHour;
     
-    cout << runTimes;
-    int i = 0;
-   
+    cout << runTimes << " Times " << endl  << endl;
+    
     int stNum = startHour;
-          
-    while ( i < runTimes){        
-            i=i+1;
+    int i = 0;  
+       
+    for(i ; i < runTimes; i++){ 
             
             int n =0;
-            int m =0;
-           while (n < 60)
+            int u =0;
+           
+            if (stNum < 12) 
+                {TimeOfDay = "am";}
+            else
+                {TimeOfDay = "pm";}
+           
+           
+            for (n=0; n < 1; n++)
                {
-                    while(m <60)
+                    for(u; u <60; u=u+15)
+                            
                             {
-                            while(m <10)
+                             for(u; u <15; u=u+15)
                                     {
-                                        cout << stNum << ":0"<< 0+m << endl;
-                                        m= m+15;
+                                      cout << stNum << ":0"<< 0+u << " " << TimeOfDay << endl;   
                                     };
-                                cout << stNum << ":"<< 0+m << endl;
-                                m= m+15;
-                                n=60;                            
-                                
+                                cout << stNum << ":"<< 0+u << " " << TimeOfDay  << endl;
                             };
-                    
+                stNum= stNum + 1;
                 };
-                stNum= stNum + 1; 
-    }
-    cout << stNum  << ":00"  <<  endl;
+                
+    };
+    cout << stNum  << ":00" << " " << TimeOfDay    <<  endl;
 }
 
 int main(){
@@ -146,28 +141,3 @@ int main(){
  userInfo();
  
 };
-
-/*
-Problem Statement
-
-Create a program that will print every minute between two values.
-
-First, start by programming every minute between 1:00 pm and 2:59 pm using one or more loops.
-
-Second, accept user input for a start hour and ending hour.  Print every 15 minute interval between these two times.
-Requirements
-
- Use the appropriate loops.
-Input
-
-Your choice.
-Output
-
-Appropriate input questions.
-
-Output in time including am/pm.
-Submission:
-
-Post your lab to GitHub.
-
-Take a screenshot of your lab running.  Submit the document to the Canvas assignment.  Put in any comments you want me to know.*/

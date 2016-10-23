@@ -69,14 +69,14 @@ int counter(){
                         while(m <10)
                                 {
                                   
-                                    cout << "1:0"<< 0+m << endl;
+                                    cout << "1:0"<< 0+m << " pm" << endl;
                                 
                                     m= m+1;
                                 };
                         
                         
                           
-                            cout << "1:"<< 0+m << endl;
+                            cout << "1:"<< 0+m << " pm" << endl;
                         
                             m= m+1;
                         };
@@ -86,17 +86,18 @@ int counter(){
                         {
                                 while(n <10)
                                     {
-                                        cout << "2:0"<< 0+n << endl;
+                                        cout << "2:0"<< 0+n << " pm" << endl;
                                         n= n+1;
                                     };
                         
-                            cout << "2:"<< 0+n << endl;
+                            cout << "2:"<< 0+n << " pm"  << endl;
                             n = n +1;
                         };  
             };
 }
 
 int userInfo(){
+     string TimeOfDay = " ";  
     int startHour = 0;
     int endHour = 0;
     int runTimes = 0;
@@ -116,7 +117,12 @@ int userInfo(){
     int i = 0;
    
     int stNum = startHour;
-          
+     
+     if (stNum < 12) 
+                {TimeOfDay = "am";}
+            else
+                {TimeOfDay = "pm";}      
+                
     while ( i < runTimes){        
             i=i+1;
             
@@ -128,10 +134,10 @@ int userInfo(){
                             {
                             while(m <10)
                                     {
-                                        cout << stNum << ":0"<< 0+m << endl;
+                                        cout << stNum << ":0"<< 0+m << " " << TimeOfDay << endl;
                                         m= m+15;
                                     };
-                                cout << stNum << ":"<< 0+m << endl;
+                                cout << stNum << ":"<< 0+m << " " << TimeOfDay <<  endl;
                                 m= m+15;
                                 n=60;                            
                                 
@@ -140,7 +146,7 @@ int userInfo(){
                 };
                 stNum= stNum + 1; 
     }
-    cout << stNum  << ":00"  <<  endl;
+    cout << stNum  << ":00"  << " " << TimeOfDay <<   endl;
 }
 
 int main(){
