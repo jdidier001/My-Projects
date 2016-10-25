@@ -58,8 +58,65 @@ int art() {
     cout << "Copyright Jared W Didier 2016";
 };
 
+int userMenu(){
+    const int NUM_ELEMENTS = 80;        // Number of elements
+    int userChoice[NUM_ELEMENTS];       // User numbers
+    int i = 0;                          // Loop index
+    int m = 0;             
+    int runCount =0;                    // For computing sum
+    
+    cout<< "Please enter a number for your choice of what ou want want to buy!"<< endl;
+    cout << "1. Cars" << endl;
+    cout << "2. Cloths" << endl;
+    cout << "3. Building tools & suplies" << endl;
+    cout << "4. Decorations" << endl;
+    cout << "5. Yard Art" << endl;
+    cout << "6. Plants" << endl;
+    cout << "7. Holiday Supplies" << endl;
+    cout << "8. Work Supplies" << endl;
+    cout << "9. Useless Stuff" << endl;
+    cout << "0. Done with selections" << endl;
+    
+                                                                                        
+        for (i = 1; i < NUM_ELEMENTS; ++i); {
+            
+                while(userChoice[i] !=0)  { 
+                cout << "You entered ";
+                cin >> userChoice[i];
+                runCount = runCount +1;
+                
+                } runCount = runCount-1;
+                   
+                cout << "You Ordered: "<< runCount << " items! " << endl;
+                
+                int m = 0;
+    
+                 for (m=1; m <= runCount; ++m);{
+                      
+                        cout << userChoice[m] << " its on it way!" << endl;
+                     }
+                return runCount;
+
+
+}
+
+   /* int ord = 0;
+    
+    for (ord=1; ord >= runCount; ++ord);{
+        while(userChoice[ord] !=0)  { 
+                cout << userChoice[ord] << " its on it way!" << endl;
+       }*/ 
+    
+
+    
+    
+
+return 0;
+};
+
 /*
-Create a menu program.  Your menu must have 10 different items for the user to choose from. The program should allow the user to choose an item until they say they are done.
+Create a menu program.  Your menu must have 10 different items for the user to choose from. 
+The program should allow the user to choose an item until they say they are done.
 Requirements
 
 Use an array to hold how many of each item a user requests.
@@ -75,11 +132,13 @@ Post your lab to GitHub.
 
 Submit to the Canvas assignment.  Put in any comments you want me to know.*/
 
-int main(){
-    
-    art();
-    
-    
-    
+int main() {
+   userMenu();
+   
+   
+  // art();
+   
+   
+   return 0;
 }
 
