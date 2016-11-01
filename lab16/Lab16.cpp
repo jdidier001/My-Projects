@@ -66,15 +66,15 @@ int userMenu(){
     int runCount =0;                    // For computing sum
     
     cout<< "Please enter a number for your choice of what ou want want to buy!"<< endl;
-    cout << "1. Cars = 2.75" << endl;
-    cout << "2. Cloths = 10.95" << endl;
-    cout << "3. Ladder == 22.45" << endl;
-    cout << "4. Halloween Decorations = 32.65" << endl;
-    cout << "5. Yard Art = 23.45" << endl;
-    cout << "6. Plants = 7.67" << endl;
-    cout << "7. Thanksgiving Supplies = 9.66" << endl;
-    cout << "8. Work Supplies = 13.96" << endl;
-    cout << "9. Useless Stuff = 100.96" << endl;
+    cout << "1. Cars" << endl;
+    cout << "2. Cloths" << endl;
+    cout << "3. Building tools & suplies" << endl;
+    cout << "4. Decorations" << endl;
+    cout << "5. Yard Art" << endl;
+    cout << "6. Plants" << endl;
+    cout << "7. Holiday Supplies" << endl;
+    cout << "8. Work Supplies" << endl;
+    cout << "9. Useless Stuff" << endl;
     cout << "0. Done with selections" << endl;
     
                                                                                         
@@ -100,6 +100,13 @@ int userMenu(){
 
 }
 
+   /* int ord = 0;
+    
+    for (ord=1; ord >= runCount; ++ord);{
+        while(userChoice[ord] !=0)  { 
+                cout << userChoice[ord] << " its on it way!" << endl;
+       }*/ 
+    
 
     
     
@@ -107,7 +114,23 @@ int userMenu(){
 return 0;
 };
 
+/*
+Create a menu program.  Your menu must have 10 different items for the user to choose from. 
+The program should allow the user to choose an item until they say they are done.
+Requirements
 
+Use an array to hold how many of each item a user requests.
+Input
+
+As needed.
+Output
+
+As needed.
+Submission:
+
+Post your lab to GitHub.
+
+Submit to the Canvas assignment.  Put in any comments you want me to know.*/
 
 int main() {
    userMenu();
@@ -118,4 +141,24 @@ int main() {
    
    return 0;
 }
+/* try the code below to fix issues with program
 
+int main() {
+   const int NUM_ELEMENTS = 8;   // Number of elements
+   int userVals[NUM_ELEMENTS];   // User numbers
+   int copiedVals[NUM_ELEMENTS]; // Copied/modified user numbers
+   int i = 0;                    // Loop index
+   
+   // Prompt user for input values
+   cout << "Enter " << NUM_ELEMENTS << " integer values..." << endl;
+   for (i = 0; i < NUM_ELEMENTS; ++i) {
+      cout << "Value: ";
+      cin >> userVals[i];
+   }
+   
+   // Copy userNums to copiedNums array
+   for (i = 0; i < NUM_ELEMENTS; ++i) {
+      copiedVals[i] =  userVals[i];
+   }
+
+*/
