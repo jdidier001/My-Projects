@@ -36,6 +36,7 @@ Submissions=
 #include <cmath>
 #include <cstdlib>
 #include <chrono>
+#include <string>
 
 using namespace std;
 

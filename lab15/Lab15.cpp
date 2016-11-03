@@ -59,7 +59,7 @@ int art() {
 };
 
 int userMenu(){
-    const int NUM_ELEMENTS = 80;        // Number of elements
+    int NUM_ELEMENTS = 80;        // Number of elements
     int userChoice[NUM_ELEMENTS];       // User numbers
     int i = 0;                          // Loop index
     int m = 0;             
@@ -77,43 +77,41 @@ int userMenu(){
     cout << "9. Useless Stuff" << endl;
     cout << "0. Done with selections" << endl;
     
-                                                                                        
-        for (i = 1; i < NUM_ELEMENTS; ++i); {
+        cout << "Please enter how many data bases places are needed?" << endl;
+        cin >> NUM_ELEMENTS;    
+        cout << "you entered  " << NUM_ELEMENTS << "database places" << endl;
+            
+        for (i = 0; i < NUM_ELEMENTS; ++i); {
+                
             
                 while(userChoice[i] !=0)  { 
-                cout << "You entered ";
+                cout << "Please enter your choice of products " << endl;   
                 cin >> userChoice[i];
+                cout << "You entered ";
                 runCount = runCount +1;
                 
                 } runCount = runCount-1;
                    
                 cout << "You Ordered: "<< runCount << " items! " << endl;
+        int c =0;
+        for (c=0; c < NUM_ELEMENTS; ++c)  { 
+                cout << "You ordered " << userChoice[c]<< endl;
+                } 
                 
-                int m = 0;
-    
-                 for (m=1; m <= runCount; ++m);{
-                      
-                        cout << userChoice[m] << " its on it way!" << endl;
-                     }
                 return runCount;
+        }
+        
+        
+        
 
-
-}
-
-   /* int ord = 0;
-    
-    for (ord=1; ord >= runCount; ++ord);{
-        while(userChoice[ord] !=0)  { 
-                cout << userChoice[ord] << " its on it way!" << endl;
-       }*/ 
-    
-
-    
-    
-
+ 
 return 0;
 };
 
+    
+                
+                
+                
 /*
 Create a menu program.  Your menu must have 10 different items for the user to choose from. 
 The program should allow the user to choose an item until they say they are done.
@@ -134,6 +132,7 @@ Submit to the Canvas assignment.  Put in any comments you want me to know.*/
 
 int main() {
    userMenu();
+  
    
    
   // art();
