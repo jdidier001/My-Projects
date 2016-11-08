@@ -152,7 +152,7 @@ int userChoiceOfItems(){
                 } runCount = runCount-1;
                    
                 cout << "You Ordered: "<< runCount << " items! " << endl << endl;
-                cout << "Your Grand Total is $"<< total << endl;
+                cout << "Your Grand Total with tax  is $"<< (total+ (total*.075)) << endl;
 };
 
 int main(){
@@ -188,35 +188,3 @@ Submission:
 
 Post your lab to GitHub.
 /*
-Submit to the Canvas assignment.  Put in any comments you want me to know.
-
-int main() {
-   userMenu();
-   
-   
-  // art();
-   
-   
-   return 0;
-}
-/* try the code below to fix issues with program
-
-int main() {
-   const int NUM_ELEMENTS = 8;   // Number of elements
-   int userVals[NUM_ELEMENTS];   // User numbers
-   int copiedVals[NUM_ELEMENTS]; // Copied/modified user numbers
-   int i = 0;                    // Loop index
-   
-   // Prompt user for input values
-   cout << "Enter " << NUM_ELEMENTS << " integer values..." << endl;
-   for (i = 0; i < NUM_ELEMENTS; ++i) {
-      cout << "Value: ";
-      cin >> userVals[i];
-   }
-   
-   // Copy userNums to copiedNums array
-   for (i = 0; i < NUM_ELEMENTS; ++i) {
-      copiedVals[i] =  userVals[i];
-   }
-
-*/
