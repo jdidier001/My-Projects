@@ -38,6 +38,7 @@ Submissions=
 #include <chrono>
 #include <string>
 #include <fstream>
+#include <sstream>
 
 using namespace std;
 
@@ -63,6 +64,7 @@ int art() {
 int main(){
 
 ifstream inFS;     // Input file stream
+ofstream outFS;      // Output string stream
 int i=0;
 int m=0;
 int numArray[3][4];
@@ -72,6 +74,13 @@ int numArray[3][4];
       cout << "Could not open file txt.txt " << endl;
       return 1;} // 1 indicates error */
 
+    // Open file
+   outFS.open("outputNums.txt");
+   
+   if (!outFS.is_open()) {
+      cout << "Could not open file outputNums.txt." << endl;
+      return 1;
+   }
 
 // Get input from user *******************************************
     i=0;
@@ -81,12 +90,12 @@ while (i<3){
     //cout << "Please enter a number " << endl;
     //cin >> numArray[i][m];
     inFS >> numArray[i][m];
-    cout << numArray[i][m];// << "was entered " << "  ";
+    cout << numArray[i][m] << " ";// << "was entered " << "  ";
     m++;}
     cout << endl;
     i++;}
-    
-   cout << "Closing file txt.txt." << endl;
+    cout << endl << endl;
+   //cout << "Closing file txt.txt." << endl;
    inFS.close(); // Done with file, so close it
 
     int rowTotal = 0;
@@ -103,9 +112,11 @@ while (i <3){
          //cout << "you entered ";
     while (m<4){
         if (numArray[i][m] <= 9 ){
-            cout << numArray[i][m]<< "  ";}
+            cout << numArray[i][m]<< "  ";
+            outFS << numArray[i][m] << "  ";}
         else {
-            cout << numArray[i][m]<< " ";}
+            cout << numArray[i][m]<< " ";
+            outFS << numArray[i][m] << " ";}
             m++;}
             
 // Totals the rows*************************************************
@@ -117,6 +128,7 @@ while (i <3){
             m++;}
             
         cout << "  " << rowTotal<< endl;
+        outFS << "  " << rowTotal<< endl;
     i++;}
    
    
@@ -131,10 +143,14 @@ while (i <3){
         while (i<3){
             columnTotal = columnTotal + numArray[i][m];
             i++;}
-            cout << columnTotal << " "; 
+            cout << columnTotal << " ";
+            outFS << columnTotal << " ";
         m++;
     }
     cout << endl << endl;
+   
+    // Done with file, so close it
+    outFS.close();
 }
 
 /*
