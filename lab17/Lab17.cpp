@@ -38,6 +38,7 @@ Submissions=
 #include <chrono>
 #include <string>
 #include <fstream>
+#include <cstring>
 
 using namespace std;
 
@@ -63,22 +64,24 @@ int art() {
 
 
 
-string getUserInput(){
-    string  userFirstName [10]; // Input string
-    string  userLastName[20]; // Input string
-    string userNameChoice; // The email name that the user picks
-    int   i = 0; 
-   
-    // Prompt user for name
-   
+char getUserInput(){
+    char userFirstName [10]; // Input char max 10
+    char userLastName[20]; // Input char max 20
+    char userNameChoice; // The email name that the user picks
+    int  i = 0; 
+    int  j = 0;
     
+    // Prompt user for name and verfy it
+   
+    j = 0;
+    while(j=0) // Gets validates first and last names name to size alotment
             i=0;
-            while (i!=1){
+            while (i!=1){ // Gets first name validates it
                cout << "Please enter your first name (<10 chars): ";
                cin >> userFirstName; // gets name
-                        string First (userFirstName);
+                        int firstNameSz = strlen(userFirstName);
                         
-                            if (First.length()>10)//compares length to max length of first name
+                            if (firstNameSz>10)//compares length to max length of first name
                                     {
                                         i=0;    
                                         cout << "The Stirng is longer than the allowed 10 characters" << endl;
@@ -88,15 +91,21 @@ string getUserInput(){
                                         i=1;
                                     }
             }   
-            
+            // Makes answer all lower case
             i=0;
-             while(i!=1)  {
+            while(i<10){
+                userFirstName[i] = tolower(userFirstName[i]);
+                i++;
+          }
+         
+            i=0;
+             while(i!=1)  { // Gets last name validates it
                cout << "Please enter your last name (<20 chars): ";
                cin >> userLastName; // Sets last name
                         
-                        string Last (userLastName);
+                        int lastNameSz = strlen(userLastName);
                         
-                            if (Last.length()>20)// Compares length of input to max length 
+                            if (lastNameSz>20)// Compares length of input to max length 
                                     {
                                        i=0;
                                        cout << "The Stirng is longer than the allowed 20 characters" << endl;
@@ -107,64 +116,97 @@ string getUserInput(){
                                     }
              
              }
-             //setup of first to last comparison
-        string entFirst (userFirstName);
-        string entLast (userLastName);
-     
+          // Makes answer all lower case
+          i=0;
+          while(i<20){
+              userLastName[i] = tolower(userLastName[i]);
+              i++;
+          }
+   // Compares first and last names then ask user to make sure they have the same first and last names this allows them to change one of them if there is a mistake.
+                    i=0;
+                   while( i!=1){ 
+                    if (strcmp(userFirstName,userLastName) != 0){// compares values of both names
+                            cout << "Your first name " << userFirstName << " is not the same as your last name " << userLastName << '\n';
+                            cout << endl;
+                            i=1;
+                            j=0;
+                            
+                        }
+                    else
+                        {   cout << "You entered the same name for both the First and Last name fields. " << endl;
+                            cout << "Are the the same name for both fields? Please enter Y  or N" << endl;
+                            char answer;
+                            cin >> answer;
+                            answer = tolower(answer);
+                            
+                                    if(answer ='y'){
+                                        j=0;}
+                                    else if (answer = 'n'){
+                                        j=1;}
+                                    else {
+                                        cout << "Invalid entry!! Restarting";
+                                        j=1;}
+                        }
+            
+        }
+
+
+
+//user name conversion
+    char  company1stOpt [22];   // Input char max 10
+    char  company2ndOpt [30];    // Input char max 20
+    char  company3rdOpt [21];    // Input char max 20
     
-    if (entFirst.compare(entLast) != 0){// compares values of both names
-            cout << "Your first name " << entFirst << " is not the same as your last name " << entLast << '\n';
-            cout << endl;
-        }
-    else
-        {   cout << "You entered the same name for both the First and Last name fields. " << endl;
-            cout << "We will AssUMe you have the same name for both fields? " << endl;
-            cout << endl;
-        }
+            memset(company1stOpt, 0, 22);       // resets Memory values to eliminate false information
+            memset(company2ndOpt, 0, 30);       // resets Memory values to eliminate false information
+            memset(company3rdOpt, 0, 21);       // resets Memory values to eliminate false information
+
+
+            strncpy(company1stOpt, userFirstName, 2);      // copies the first 2 char in userfirstname and puts them in company1stOpt
+            strncpy(company2ndOpt, userFirstName, 10);     // copies the first 10 char in userfirstname and puts them in company2ndOpt
+            strncpy(company3rdOpt, userFirstName, 1);      // copies the first char in userfirstname and puts them in company3rdOpt
+                  
+            strcat(company1stOpt, userLastName);  // adds the last name to the first 2 char in userfirstname and puts it all in company1stOpt
+            strcat(company2ndOpt, ".");  // adds period and puts it at the end of company2ndOpt
+            strcat(company2ndOpt, userLastName);  // adds the last name to the first 10 char in userfirstname and puts it all in company2ndOpt
+            strcat(company3rdOpt, userLastName);  // adds the last name to the first  char in userfirstname and puts it all in company3rdOpt
+
 
 cout << "Name: " << userFirstName << " " << userLastName<< endl<< endl;
 
-//user name conversion
-
-  string First(userFirstName);
-  string Last(userLastName);
-
-  cout << userFirstName <<  userLastName << "@myCoolCompany.jwd" << endl;
-
-  string userName2 = First.substr (0,1);     // Gets first initial of First name
-  cout << userName2 << userLastName << "@myCoolCompany.jwd" << endl;
-  
-  string userName1 = First.substr (0,2);     // Gets first two initials of First name
-  cout << userName1 << userLastName << "@myCoolCompany.jwd" << endl;
-  
-  string userName3 = First.substr (0,3);     // Gets first three initials of First name
-  cout << userName3 << userLastName << "@myCoolCompany.jwd" << endl;
-  
-  string userName4 = First.substr (0,3);     // Gets first three initials of First name and Last name
-  string userName5 = Last.substr (0,3);
-  cout << userName4 << userName5 << "@myCoolCompany.jwd" << endl << endl;
-  
-
-
 cout <<"Which user email address would you prefer? " << endl;
+
+cout << "1. " << company1stOpt << endl;
+cout << "2. " << company2ndOpt << endl;
+cout << "3. " << company3rdOpt << endl;
 cout << "Please type your choice" << endl; //Lets user pick there name
+
 cin >> userNameChoice;
-cout<< "You picked " << userNameChoice << " nice decision!" << endl;
 
 
-return  userFirstName,  userLastName;
+switch (userNameChoice){
+
+    case '1':
+                cout<< "You picked the first option " << company1stOpt <<  " nice decision!" << endl;
+                cout<< "Your complete new company email address is " << company1stOpt <<  "@mycoolcompany.com" << endl;
+            break;
+    case '2':
+                cout<< "You picked the second option " << company2ndOpt <<  " nice decision!" << endl;
+                cout<< "Your complete new company email address is " << company2ndOpt <<  "@mycoolcompany.com" << endl;
+            break;
+    case '3':
+                cout<< "You picked the third option " << company3rdOpt <<  " nice decision!" << endl;
+                cout<< "Your complete new company email address is " << company3rdOpt <<  "@mycoolcompany.com" << endl;
+            break;
+    default: 
+             cout << "Default for case statement " << endl;
+    }
 };
-
-
-
-
 
 int main() {
     
-    
     getUserInput();
   
-
     return 0;
 }
 /*
@@ -173,7 +215,7 @@ int main() {
 This program is responsible for creating user names for a new website you have created.  It should accept a first name of up to 10 characters and a last name of up to 20 characters.  It should tell the user if the name is larger than the max size.  It should also determine if the names are the same and output a warning.  After checking these things, it should create three different user name options (for example: apbrowne; aprilbrowne; abrowne).
 Requirements
 
-    Use ONLY C string and character manipulation tools
+    Use ONLY C char and character manipulation tools
 
 Input
 
