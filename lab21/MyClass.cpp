@@ -11,4 +11,5 @@ MyClass::MyClass() : num_(0) {}
 void MyClass::Output() {
     num_=1;
   cout << "My number is: " << num_ << endl;
+  
 }
